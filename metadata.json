@@ -1,0 +1,79 @@
+{
+  "model_name": "XGBoost (tuned)",
+  "created": "2026-09-11 04:08:50",
+  "target": "price",
+  "features": {
+    "categorical": [
+      "from",
+      "to",
+      "flightType",
+      "agency",
+      "gender",
+      "company"
+    ],
+    "numeric": [
+      "distance",
+      "time",
+      "year",
+      "month",
+      "day",
+      "day_of_week",
+      "quarter",
+      "is_weekend",
+      "age"
+    ]
+  },
+  "categories": {
+    "from": [
+      "Aracaju (SE)",
+      "Brasilia (DF)",
+      "Campo Grande (MS)",
+      "Florianopolis (SC)",
+      "Natal (RN)",
+      "Recife (PE)",
+      "Rio de Janeiro (RJ)",
+      "Salvador (BH)",
+      "Sao Paulo (SP)"
+    ],
+    "to": [
+      "Aracaju (SE)",
+      "Brasilia (DF)",
+      "Campo Grande (MS)",
+      "Florianopolis (SC)",
+      "Natal (RN)",
+      "Recife (PE)",
+      "Rio de Janeiro (RJ)",
+      "Salvador (BH)",
+      "Sao Paulo (SP)"
+    ],
+    "flightType": [
+      "economic",
+      "firstClass",
+      "premium"
+    ],
+    "agency": [
+      "CloudFy",
+      "FlyingDrops",
+      "Rainbow"
+    ],
+    "gender": [
+      "female",
+      "male",
+      "none"
+    ],
+    "company": [
+      "4You",
+      "Acme Factory",
+      "Monsters CYA",
+      "Umbrella LTDA",
+      "Wonka Company"
+    ]
+  },
+  "test_metrics": {
+    "R2": 1.0,
+    "RMSE": 0.02527,
+    "MAE": 0.00419,
+    "MAPE%": 0.0006
+  },
+  "n_train_rows": 217510
+}

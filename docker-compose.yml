@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: flight-price-api:latest
+    container_name: flight-price-api
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    image: flight-price-ui:latest
+    container_name: flight-price-ui
+    ports:
+      - "7860:7860"
+    environment:
+      - API_URL=http://api:5000
+    depends_on:
+      - api
+    restart: unless-stopped

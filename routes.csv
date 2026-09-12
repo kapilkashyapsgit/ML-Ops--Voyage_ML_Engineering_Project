@@ -1,0 +1,71 @@
+from,to,distance,time
+Aracaju (SE),Brasilia (DF),425.98,1.11
+Aracaju (SE),Campo Grande (MS),650.1,1.69
+Aracaju (SE),Florianopolis (SC),808.85,2.1
+Aracaju (SE),Natal (RN),176.33,0.46
+Aracaju (SE),Recife (PE),555.74,1.44
+Aracaju (SE),Rio de Janeiro (RJ),597.61,1.55
+Aracaju (SE),Salvador (BH),830.86,2.16
+Aracaju (SE),Sao Paulo (SP),392.76,1.02
+Brasilia (DF),Aracaju (SE),425.98,1.11
+Brasilia (DF),Campo Grande (MS),277.7,0.72
+Brasilia (DF),Florianopolis (SC),637.56,1.66
+Brasilia (DF),Natal (RN),550.69,1.43
+Brasilia (DF),Recife (PE),242.21,0.63
+Brasilia (DF),Rio de Janeiro (RJ),183.37,0.48
+Brasilia (DF),Salvador (BH),676.56,1.76
+Brasilia (DF),Sao Paulo (SP),257.81,0.67
+Campo Grande (MS),Aracaju (SE),650.1,1.69
+Campo Grande (MS),Brasilia (DF),277.7,0.72
+Campo Grande (MS),Florianopolis (SC),573.81,1.49
+Campo Grande (MS),Natal (RN),250.68,0.65
+Campo Grande (MS),Recife (PE),535.4,1.39
+Campo Grande (MS),Rio de Janeiro (RJ),806.48,2.09
+Campo Grande (MS),Salvador (BH),522.34,1.36
+Campo Grande (MS),Sao Paulo (SP),168.22,0.44
+Florianopolis (SC),Aracaju (SE),808.85,2.1
+Florianopolis (SC),Brasilia (DF),637.56,1.66
+Florianopolis (SC),Campo Grande (MS),573.81,1.49
+Florianopolis (SC),Natal (RN),709.37,1.84
+Florianopolis (SC),Recife (PE),676.53,1.76
+Florianopolis (SC),Rio de Janeiro (RJ),466.3,1.21
+Florianopolis (SC),Salvador (BH),937.77,2.44
+Florianopolis (SC),Sao Paulo (SP),562.14,1.46
+Natal (RN),Aracaju (SE),176.33,0.46
+Natal (RN),Brasilia (DF),550.69,1.43
+Natal (RN),Campo Grande (MS),250.68,0.65
+Natal (RN),Florianopolis (SC),709.37,1.84
+Natal (RN),Recife (PE),222.67,0.58
+Natal (RN),Rio de Janeiro (RJ),595.03,1.55
+Natal (RN),Salvador (BH),710.57,1.85
+Natal (RN),Sao Paulo (SP),327.55,0.85
+Recife (PE),Aracaju (SE),555.74,1.44
+Recife (PE),Brasilia (DF),242.21,0.63
+Recife (PE),Campo Grande (MS),535.4,1.39
+Recife (PE),Florianopolis (SC),676.53,1.76
+Recife (PE),Natal (RN),222.67,0.58
+Recife (PE),Rio de Janeiro (RJ),885.57,2.3
+Recife (PE),Salvador (BH),788.55,2.05
+Recife (PE),Sao Paulo (SP),486.52,1.26
+Rio de Janeiro (RJ),Aracaju (SE),597.61,1.55
+Rio de Janeiro (RJ),Brasilia (DF),183.37,0.48
+Rio de Janeiro (RJ),Campo Grande (MS),806.48,2.09
+Rio de Janeiro (RJ),Florianopolis (SC),466.3,1.21
+Rio de Janeiro (RJ),Natal (RN),595.03,1.55
+Rio de Janeiro (RJ),Recife (PE),885.57,2.3
+Rio de Janeiro (RJ),Sao Paulo (SP),331.89,0.86
+Salvador (BH),Aracaju (SE),830.86,2.16
+Salvador (BH),Brasilia (DF),676.56,1.76
+Salvador (BH),Campo Grande (MS),522.34,1.36
+Salvador (BH),Florianopolis (SC),937.77,2.44
+Salvador (BH),Natal (RN),710.57,1.85
+Salvador (BH),Recife (PE),788.55,2.05
+Salvador (BH),Sao Paulo (SP),401.66,1.04
+Sao Paulo (SP),Aracaju (SE),392.76,1.02
+Sao Paulo (SP),Brasilia (DF),257.81,0.67
+Sao Paulo (SP),Campo Grande (MS),168.22,0.44
+Sao Paulo (SP),Florianopolis (SC),562.14,1.46
+Sao Paulo (SP),Natal (RN),327.55,0.85
+Sao Paulo (SP),Recife (PE),486.52,1.26
+Sao Paulo (SP),Rio de Janeiro (RJ),331.89,0.86
+Sao Paulo (SP),Salvador (BH),401.66,1.04

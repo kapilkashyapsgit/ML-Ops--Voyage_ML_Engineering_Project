@@ -1,0 +1,70 @@
+name: MLOps CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  IMAGE_API: flight-price-api
+  IMAGE_UI: flight-price-ui
+
+jobs:
+  test:
+    name: Lint and model tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest flake8
+      - name: Lint
+        run: flake8 .
+      - name: Model quality tests
+        run: pytest tests/ -v
+
+  build:
+    name: Build Docker images
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build API image
+        run: docker build -f Dockerfile.api -t $IMAGE_API:${{ github.sha }} .
+      - name: Build UI image
+        run: docker build -f Dockerfile.ui -t $IMAGE_UI:${{ github.sha }} .
+
+  deploy:
+    name: Push image and roll out
+    needs: build
+    runs-on: ubuntu-latest
+    # Enable by setting the repository variable ENABLE_DEPLOY to "true"
+    # and adding the REGISTRY_USER / REGISTRY_TOKEN secrets.
+    if: github.ref == 'refs/heads/main' && vars.ENABLE_DEPLOY == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Log in to registry
+        env:
+          USER: ${{ secrets.REGISTRY_USER }}
+          TOKEN: ${{ secrets.REGISTRY_TOKEN }}
+        run: echo "$TOKEN" | docker login -u "$USER" --password-stdin
+      - name: Build and push
+        run: |
+          TAG=${{ github.sha }}
+          docker build -f Dockerfile.api -t $IMAGE_API:$TAG .
+          docker build -f Dockerfile.ui  -t $IMAGE_UI:$TAG .
+          docker push $IMAGE_API:$TAG
+          docker push $IMAGE_UI:$TAG
+      - name: Roll out to Kubernetes
+        run: |
+          kubectl set image deployment/flight-price-deployment \
+            flight-price-container=$IMAGE_API:${{ github.sha }}
+          kubectl rollout status deployment/flight-price-deployment
